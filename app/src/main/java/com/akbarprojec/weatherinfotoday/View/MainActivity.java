@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements WeaterInterface {
         Toast.makeText(getApplicationContext(), response.getWeather().get(0).getDescription().toUpperCase(), Toast.LENGTH_LONG).show();
         bindingMain.tcLon.setText("lon : "+response.getCoord().getLon());
         bindingMain.txLat.setText("lat : "+response.getCoord().getLat());
+        bindingMain.id.setText("Id          : "+response.getWeather().get(0).getId());
+        bindingMain.main.setText("Main        : "+response.getWeather().get(0).getMain());
+        bindingMain.description.setText("Description : "+response.getWeather().get(0).getDescription());
+        bindingMain.icon.setText("Icon        : "+response.getWeather().get(0).getIcon());
     }
 
     @Override
