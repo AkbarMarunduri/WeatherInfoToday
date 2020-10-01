@@ -35,13 +35,16 @@ public class MainActivity extends AppCompatActivity implements WeaterInterface {
 
     @Override
     public void onSuccses(Response response) {
-        Toast.makeText(getApplicationContext(), response.getWeather().get(0).getDescription().toUpperCase(), Toast.LENGTH_LONG).show();
-        bindingMain.tcLon.setText("lon : "+response.getCoord().getLon());
-        bindingMain.txLat.setText("lat : "+response.getCoord().getLat());
-        bindingMain.id.setText("Id          : "+response.getWeather().get(0).getId());
-        bindingMain.main.setText("Main        : "+response.getWeather().get(0).getMain());
-        bindingMain.description.setText("Description : "+response.getWeather().get(0).getDescription());
-        bindingMain.icon.setText("Icon        : "+response.getWeather().get(0).getIcon());
+        bindingMain.coord.setText("Coord    : " + response.getCoord().getLon()+", "+ response.getCoord().getLat());
+        bindingMain.id.setText("Id    : " + response.getWeather().get(0).getId());
+        bindingMain.main.setText("Main    : " + response.getWeather().get(0).getMain());
+        bindingMain.desc.setText("Descc    : " + response.getWeather().get(0).getDescription());
+        bindingMain.icon.setText("Icon    : " + response.getWeather().get(0).getIcon());
+        bindingMain.temp.setText("Temperatur    : " + response.getMain().getTemp());
+        bindingMain.feelsLike.setText("Feels    : " + response.getMain().getFeelsLike());
+        bindingMain.tempMin.setText("Min    : " + response.getMain().getTempMin());
+        bindingMain.tempMax.setText("Max    : " + response.getMain().getTempMax());
+        bindingMain.pressure.setText("Preasure    : " + response.getMain().getPressure());
     }
 
     @Override
